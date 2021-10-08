@@ -1,10 +1,15 @@
 import React from "react";
-import { useSurvey } from "../context/SurveyContext";
+import { useLanguage, useSurvey } from "../context/LanguageContext";
+import Charts from "./Charts";
+import Survey from "./Survey";
 
 function Container() {
-  const data = useSurvey();
-  console.log(data);
-  return <div>Container</div>;
+  const data = useLanguage();
+
+  return <div>
+    <Survey />
+    <Charts />
+  </div>;
 }
 
 export default Container;

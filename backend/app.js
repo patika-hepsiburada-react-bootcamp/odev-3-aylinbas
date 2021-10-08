@@ -13,7 +13,7 @@ io.on("connection", (socket) => {
   console.log("a user connected");
   socket.on("new-survey", (survey) => {
     console.log("New survey:", survey);
-    socket.broadcast.emit("new-survey", survey);
+    // socket.broadcast.emit("new-survey", survey);
   });
 
   socket.on("disconnect", () => console.log("a user disconnected"));

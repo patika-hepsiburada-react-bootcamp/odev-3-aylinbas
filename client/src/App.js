@@ -2,7 +2,7 @@ import "./App.css";
 import { connectSocket } from "./socketApi";
 import { useEffect } from "react";
 import Container from "./components/Container";
-import { SurveyProvider } from "./context/SurveyContext";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   useEffect(() => {
@@ -10,9 +10,9 @@ function App() {
   }, []);
 
   return (
-    <SurveyProvider>
+    <LanguageProvider>
       <Container />
-    </SurveyProvider>
+    </LanguageProvider>
   );
 }
 

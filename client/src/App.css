@@ -27,7 +27,23 @@
 .App-link {
   color: #61dafb;
 }
+.center{
+  text-align: center;
+}
 
+.choiceButton{
+  margin: 5px;
+  background-color:#0C4C64 ;
+  border: 2px solid #0C4C64;
+  border-radius: 12px;
+  padding: 10px;
+  width: 20%;
+  color: white;
+}
+.choiceButton:hover{
+  background-color:white ;
+  color: #0C4C64;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
