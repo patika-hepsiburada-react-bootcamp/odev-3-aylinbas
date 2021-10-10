@@ -1,16 +1,25 @@
-import React from "react";
-
-import { sendSurvey } from "../socketApi";
+import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 function Choice({ item }) {
-  const setPoint = (id) => {
-    sendSurvey("new-survey", id);
-  };
+  const { setSelectedChoice } = useLanguage();
+
+  const handleChange = ({ target }) => setSelectedChoice(target.value);
 
   return (
-    <button className="choiceButton" onClick={() => setPoint(item.id)}>
-      {item.name}
-    </button>
+    <div className="choiceButton">
+      <input
+        type="radio"
+        value={item.id}
+        name="choice"
+        onChange={handleChange}
+      />
+      <span>{item.name}</span>
+    </div>
+
+    // <button className="choiceButton"  onClick={() => setPoint(item.id)}>
+    //   {item.name}
+    // </button>
   );
 }
 

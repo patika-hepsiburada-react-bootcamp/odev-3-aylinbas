@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.choiceButton{
+.saveButton{
   margin: 5px;
   background-color:#0C4C64 ;
   border: 2px solid #0C4C64;
@@ -16,10 +16,18 @@
   width: 20%;
   color: white;
 }
-.choiceButton:hover{
+.saveButton:hover{
   background-color:white ;
   color: #0C4C64;
 }
+
+.choiceButton{
+text-align: left;
+display: block;
+margin: 1%;
+}
+
+
 
 .chartContainer{
   width: 50%;

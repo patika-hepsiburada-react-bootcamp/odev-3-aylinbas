@@ -14,17 +14,12 @@ export const LanguageProvider = ({ children }) => {
     { id: 7, name: "C", point: "0" },
     { id: 8, name: "C++", point: "0" },
   ]);
-
-  // const setLanguagePoint = (language) => {
-  //   debugger;
-  //   const data = language;
-
-  //   setLanguage([...data]);
-  // };
+  const [selectedChoice, setSelectedChoice] = useState(0);
 
   const values = {
     languages,
-    // setLanguagePoint,
+    selectedChoice,
+    setSelectedChoice,
     setLanguage,
   };
 

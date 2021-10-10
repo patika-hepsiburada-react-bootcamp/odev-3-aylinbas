@@ -1,26 +1,36 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import Choice from "./Choice";
-import { subscribeToNewSurvey } from "../socketApi";
+import { sendSurvey } from "../socketApi";
 
 function Survey() {
-  const { languages, setLanguage } = useLanguage();
+  const { languages } = useLanguage();
+  const { selectedChoice } = useLanguage();
+  const [disable, setDisable] = React.useState(false);
 
-  //   useEffect(() => {
-  //     subscribeToNewSurvey((languages) => {
-  //       debugger;
-  //       setLanguage([...languages]);
-  //     });
-  //   }, []);
-
+  const setPoint = (id) => {
+    id = parseInt(id);
+    setDisable(true);
+    sendSurvey("new-survey", id);
+  };
+  console.log(selectedChoice);
   return (
     <div className="center">
       <h1>What is your favorite programming language?</h1>
+      <br />
       <ul>
         {languages.map((item, i) => (
           <Choice key={i} item={item} />
         ))}
       </ul>
+      <button
+        disabled={disable}
+        className={"saveButton"}
+        onClick={() => setPoint(selectedChoice)}
+      >
+        {" "}
+        Save{" "}
+      </button>
     </div>
   );
 }
