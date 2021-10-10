@@ -1,14 +1,17 @@
-import React from 'react'
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+
+import { sendSurvey } from "../socketApi";
 
 function Choice({ item }) {
-    const { setLanguagePoint } = useLanguage();
-    const setPoint = (id) => {
-        debugger;
-        setLanguagePoint(id);
-    };
+  const setPoint = (id) => {
+    sendSurvey("new-survey", id);
+  };
 
-    return <button className="choiceButton" onClick={() => setPoint(item.id)}>{item.name}</button>;
+  return (
+    <button className="choiceButton" onClick={() => setPoint(item.id)}>
+      {item.name}
+    </button>
+  );
 }
 
-export default Choice
+export default Choice;

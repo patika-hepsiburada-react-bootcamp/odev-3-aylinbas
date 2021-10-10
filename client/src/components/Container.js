@@ -1,15 +1,28 @@
-import React from "react";
-import { useLanguage, useSurvey } from "../context/LanguageContext";
 import Charts from "./Charts";
 import Survey from "./Survey";
+import { connectSocket, subscribeToNewSurvey } from "../socketApi";
+import { useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 function Container() {
-  const data = useLanguage();
+  const { setLanguage } = useLanguage();
 
-  return <div>
-    <Survey />
-    <Charts />
-  </div>;
+  useEffect(() => {
+    connectSocket();
+    subscribeToNewSurvey((data) => {
+      console.log(data);
+      setLanguage([...data]);
+    });
+    connectSocket();
+  }, [setLanguage]);
+  return (
+    <div>
+      <Survey />
+      <br />
+      <br />
+      <Charts />
+    </div>
+  );
 }
 
 export default Container;
