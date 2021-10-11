@@ -6,11 +6,13 @@
 .center{
   text-align: center;
 }
-
+/* .container{
+  background-color: blueviolet;
+} */
 .saveButton{
   margin: 5px;
-  background-color:#0C4C64 ;
-  border: 2px solid #0C4C64;
+  background-color:#013560 ;
+  border: 2px solid #013560;
   border-radius: 12px;
   padding: 10px;
   width: 20%;
@@ -22,11 +24,25 @@
 }
 
 .choiceButton{
-text-align: left;
-display: block;
-margin: 1%;
+  text-align: left;
+  background-color: white;
+  color: #0C4C64;
+  font-weight: bold;
+  font-size: 90%;
+  display: inline-block;
+  margin: 1%;
+  width: 20%;
+  padding: .5%;
+  border: 2px solid #0C4C64;
+  border-radius: 12px;
 }
 
+.choiceButton:hover{
+ background-color: white;
+color: #013560;
+  }
+  
+  
 
 
 .chartContainer{
@@ -41,4 +57,53 @@ margin: 1%;
 }
 .show{
   display: block;
+}
+
+
+.talk-bubble {
+	margin-left: 14%;
+  margin-bottom: 2%;
+  display: block;
+  position: relative;
+	width:fit-content;
+	height: auto;
+	background-color:white;
+}
+.border{
+  border: 6px solid #013560;
+  border-radius: 16px;
+}
+.round{
+  border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+
+}
+
+.tri-right.border.btm-right-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 30px;
+	bottom: -40px;
+	border: 20px solid;
+	border-color: #013560 #013560 transparent transparent;
+}
+.tri-right.btm-right-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 38px;
+	bottom: -20px;
+	border: 10px solid;
+	border-color: white white transparent transparent;
+}
+
+.thinkinImg{
+
+  width: 30%;
 }

@@ -16,7 +16,7 @@ function Container() {
     connectSocket();
   }, [setLanguage]);
   return (
-    <div className="row">
+    <div className="container">
       <Survey />
       <br />
       <br />

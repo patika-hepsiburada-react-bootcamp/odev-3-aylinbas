@@ -7,7 +7,7 @@ function Choice({ item }) {
   const handleChange = ({ target }) => setSelectedChoice(target.value);
 
   return (
-    <div className="choiceButton">
+    <div className="choiceButton" >
       <input
         type="radio"
         value={item.id}
